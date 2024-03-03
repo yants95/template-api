@@ -1,5 +1,6 @@
-import { DATABASE_URI } from '@/domain/infrastructure/settings/envs';
+import { DATABASE_URI } from '@/core/infrastructure/settings/envs';
 import { isStagingOrProd } from '@/utils/environment.util';
+
 import { DrizzlePGModule } from '@knaadh/nestjs-drizzle-pg';
 import { Global, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
@@ -20,6 +21,7 @@ export const postgresModule = DrizzlePGModule.register({
     ConfigModule.forRoot({
       isGlobal: true,
       ignoreEnvFile: isStagingOrProd(),
+      envFilePath: '.env',
       cache: true,
     }),
     postgresModule,

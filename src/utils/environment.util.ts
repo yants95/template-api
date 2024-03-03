@@ -1,5 +1,5 @@
-import { NodeEnvTypes } from '@/domain/infrastructure/settings/enum/node-env-types.enum';
-import { ENVIRONMENT } from '@/domain/infrastructure/settings/envs';
+import { NodeEnvTypes } from '@/core/infrastructure/settings/enum/node-env-types.enum';
+import { ENVIRONMENT } from '@/core/infrastructure/settings/envs';
 
 export const isEnvironment = (environmentType: NodeEnvTypes): boolean =>
   ENVIRONMENT === environmentType;

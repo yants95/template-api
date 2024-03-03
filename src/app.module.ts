@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CoreModule } from '@/domain/infrastructure/dependency-injection/modules/core.module';
+import { CoreModule } from '@/core/infrastructure/dependency-injection/modules/core.module';
 
 @Module({
   imports: [CoreModule],

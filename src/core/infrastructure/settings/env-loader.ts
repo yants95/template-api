@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
+import { NodeEnvTypes } from '@/core/infrastructure/settings/enum/node-env-types.enum';
+import { ENVIRONMENT } from '@/core/infrastructure/settings/envs';
 
 import dotenv from 'dotenv';
-import { NodeEnvTypes } from '@/domain/infrastructure/settings/enum/node-env-types.enum';
-import { ENVIRONMENT } from '@/domain/infrastructure/settings/envs';
+import fs from 'fs';
+import path from 'path';
 
 export class EnvLoader {
   private static readonly envPath = [__dirname, '..', '..', '..', '..'];
