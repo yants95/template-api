@@ -8,7 +8,8 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "node --env-file=.env dist/src/main.js",
+    "start:nest": "nest start",
     "start:dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules -r tsconfig-paths/register ./src/main.ts",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
