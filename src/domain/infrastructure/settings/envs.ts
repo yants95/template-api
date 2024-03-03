@@ -44,7 +44,6 @@ export function getEnvOrDefault<T extends object>(
 
 // App
 export const APP_PORT = getEnvOrDefault('APP_PORT', '3003');
-export const APP_NAME = getEnvOrThrow('APP_NAME');
 export const APP_HOST = getEnvOrDefault('APP_HOST', 'http://localhost');
 
 // App types
@@ -58,3 +57,9 @@ export const isStaging = ENVIRONMENT === NodeEnvTypes.staging;
 export const isProduction = ENVIRONMENT === NodeEnvTypes.production;
 
 export const isProdOrStaging = (): boolean => isProduction || isStaging;
+
+// Database
+export const DATABASE_URI = getEnvOrDefault(
+  'DATABASE_URI',
+  'postgres://postgres:pg-container-local@localhost/huron-db',
+);
