@@ -1,6 +1,9 @@
 import { NodeEnvTypes } from '@/domain/infrastructure/settings/enum/node-env-types.enum';
+import { EnvLoader } from '@/domain/infrastructure/settings/env-loader';
 import { Guard } from '@/libs/guard';
 import assert from 'assert';
+
+EnvLoader.load();
 
 function validateEnumEnvironment<T extends object>(
   value: string,
@@ -59,7 +62,4 @@ export const isProduction = ENVIRONMENT === NodeEnvTypes.production;
 export const isProdOrStaging = (): boolean => isProduction || isStaging;
 
 // Database
-export const DATABASE_URI = getEnvOrDefault(
-  'DATABASE_URI',
-  'postgres://postgres:pg-container-local@localhost/huron-db',
-);
+export const DATABASE_URI = getEnvOrThrow('DATABASE_URI');
