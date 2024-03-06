@@ -1,8 +1,8 @@
 import assert from 'node:assert';
 
+import { Guard } from '@/libs/guard';
 import { NodeEnvTypes } from '@/core/infrastructure/settings/enum/node-env-types.enum';
 import { EnvLoader } from '@/core/infrastructure/settings/env-loader';
-import { Guard } from '@/libs/guard';
 
 EnvLoader.load();
 
@@ -64,3 +64,4 @@ export const isProdOrStaging = (): boolean => isProduction || isStaging;
 
 // Database
 export const DATABASE_URI = getEnvOrThrow('DATABASE_URI');
+export const CLERK_SECRET_KEY = getEnvOrThrow('CLERK_SECRET_KEY');

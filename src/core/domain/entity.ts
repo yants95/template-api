@@ -1,4 +1,4 @@
-import { EntityId } from '@/domain/entity-id';
+import { EntityId } from '@/core/domain/entity-id';
 import { Guard } from '@/libs/guard';
 
 interface BaseEntityProps {

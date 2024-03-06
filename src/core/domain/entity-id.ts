@@ -1,5 +1,5 @@
-import { DomainException } from '@/domain/domain-exception';
-import { Id } from '@/domain/id';
+import { DomainException } from '@/core/domain/domain-exception';
+import { Id } from '@/core/domain/id';
 
 export class EntityId implements Id<EntityId> {
   public constructor(private readonly identifier: string | number) {

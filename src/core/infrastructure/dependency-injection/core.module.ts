@@ -24,7 +24,6 @@ export const postgresModule = DrizzlePGModule.register({
       envFilePath: '.env',
       cache: true,
     }),
-    postgresModule,
   ],
   providers: [],
   exports: [],

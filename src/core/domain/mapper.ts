@@ -1,4 +1,4 @@
-import { Entity } from '@/domain/entity';
+import { Entity } from '@/core/domain/entity';
 
 export interface Mapper<DomainEntity extends Entity<unknown>, DbModel> {
   toPersistance(entity: DomainEntity): DbModel;

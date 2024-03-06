@@ -16,11 +16,13 @@
     "test:cov": "vitest run --coverage"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.11",
     "@knaadh/nestjs-drizzle-pg": "^1.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "class-validator": "^0.14.1",
     "drizzle-orm": "^0.29.4",
     "module-alias": "^2.2.3",
     "pg": "^8.11.3",
