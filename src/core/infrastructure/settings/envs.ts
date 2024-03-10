@@ -1,8 +1,8 @@
 import assert from 'node:assert';
 
-import { Guard } from '@/libs/guard';
 import { NodeEnvTypes } from '@/core/infrastructure/settings/enum/node-env-types.enum';
 import { EnvLoader } from '@/core/infrastructure/settings/env-loader';
+import { Guard } from '@/libs/guard';
 
 EnvLoader.load();
 

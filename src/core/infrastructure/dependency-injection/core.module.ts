@@ -1,19 +1,12 @@
+import { NodeEnvTypes } from '@/core/infrastructure/settings/enum/node-env-types.enum';
 import { DATABASE_URI } from '@/core/infrastructure/settings/envs';
 import { isStagingOrProd } from '@/utils/environment.util';
 
-import { DrizzlePGModule } from '@knaadh/nestjs-drizzle-pg';
 import { Global, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-export const postgresModule = DrizzlePGModule.register({
-  tag: 'DB_PROD',
-  pg: {
-    connection: 'client',
-    config: {
-      connectionString: DATABASE_URI,
-    },
-  },
-});
+const dir = process.env.NODE_ENV === NodeEnvTypes.development ? 'src' : 'dist';
 
 @Global()
 @Module({
@@ -22,7 +15,15 @@ export const postgresModule = DrizzlePGModule.register({
       isGlobal: true,
       ignoreEnvFile: isStagingOrProd(),
       envFilePath: '.env',
-      cache: true,
+      cache: false,
+    }),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      url: DATABASE_URI,
+      synchronize: false,
+      entities: [
+        `./${dir}/modules/**/infrastructure/database/postgres/*.model.{js,ts}`,
+      ],
     }),
   ],
   providers: [],

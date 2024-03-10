@@ -4,7 +4,7 @@ import {
   RegisterDTO,
 } from '@/modules/user/domain/services/auth.service';
 
-import Clerk from '@clerk/clerk-sdk-node/esm/instance';
+import { Clerk } from '@clerk/clerk-sdk-node';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
