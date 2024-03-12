@@ -1,6 +1,6 @@
 import { EntityId } from '@/core/domain/entity-id';
 import { Mapper } from '@/core/domain/mapper';
-import { User } from '@/modules/user/application/entities/user';
+import { User } from '@/modules/user/domain/entities/user';
 import { UserModel } from '@/modules/user/infrastructure/database/postgres/user.model';
 
 import { Injectable } from '@nestjs/common';
