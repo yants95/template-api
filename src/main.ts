@@ -1,9 +1,12 @@
-import { NestFactory } from '@nestjs/core';
+import { NestApplication } from '@/nest-application';
 
-import { AppModule } from './app.module';
+const app = NestApplication.create();
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-}
-bootstrap();
+app
+  .start()
+  .then(() => {
+    console.info('Server started successfully!');
+  })
+  .catch((error) => {
+    console.error('Failed to start server', error);
+  });

@@ -47,7 +47,7 @@ export function getEnvOrDefault<T extends object>(
 }
 
 // App
-export const APP_PORT = getEnvOrDefault('APP_PORT', '3003');
+export const APP_PORT = getEnvOrThrow('APP_PORT');
 export const APP_HOST = getEnvOrDefault('APP_HOST', 'http://localhost');
 
 // App types
